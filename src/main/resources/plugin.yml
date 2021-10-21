@@ -1,0 +1,7 @@
+name: DevnicsRanks
+main: com.gmail.furkanaxx34.ranks.Ranks
+version: 1.0
+
+commands:
+  ranks:
+    description: See ranks
