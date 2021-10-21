@@ -46,15 +46,16 @@ public class RanksMenu extends ARanksMenu {
                     "&7automatically moved to this rank.", "",
                     "&ePrice: %rank_price%")
             .getItemStack();
-    
+
     public static FileElement skull = FileElement.insert(ItemStackBuilder.from(XMaterial.PLAYER_WALL_HEAD)
-            .setName("&a%player%")
-            .setLore(
-                    "&eYour prestige points: &a%prestige_points%"
-            ).getItemStack(),
+                    .setName("&a%player%")
+                    .setLore(
+                            "&eYour prestige points: &a%prestige_points%"
+                    ).getItemStack(),
             0,
             4,
-            clickEvent -> {}
+            clickEvent -> {
+            }
     );
 
     @Nullable
@@ -108,7 +109,7 @@ public class RanksMenu extends ARanksMenu {
                         ItemStack contentItem = content.getItemStack();
                         Icon icon = Icon.from(contentItem);
                         icons[i] = icon;
-                    }catch (NumberFormatException | ArrayIndexOutOfBoundsException ex) {
+                    } catch (NumberFormatException | ArrayIndexOutOfBoundsException ex) {
                         Ranks.getInstance().getLogger().warning((i + 1) + ". config rank set as wrong. Please load \"config.yml\" file.");
                     }
                 }

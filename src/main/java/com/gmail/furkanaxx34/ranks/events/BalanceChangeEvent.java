@@ -47,6 +47,7 @@ public class BalanceChangeEvent extends Event {
 
     /**
      * Required for Spigot Event System.
+     *
      * @return Registered classes.
      */
     @NotNull

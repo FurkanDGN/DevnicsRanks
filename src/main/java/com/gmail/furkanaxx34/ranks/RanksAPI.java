@@ -8,28 +8,24 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import tr.com.infumia.infumialib.paper.utils.TaskUtilities;
 
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class RanksAPI {
 
+    @NotNull
+    private static final ExecutorService executor = Executors.newFixedThreadPool(1);
     @Nullable
     private Sql sql;
-
     @Nullable
     private HashMap<UUID, Integer> prestige = null;
     private HashMap<UUID, Integer> lastTakenMoney = null;
-
-    @NotNull
-    private static final ExecutorService executor = Executors.newFixedThreadPool(1);
 
     void load() {
         sql = RanksConfig.getSql();

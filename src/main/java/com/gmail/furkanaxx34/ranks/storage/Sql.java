@@ -105,7 +105,7 @@ public interface Sql {
             rs = ps.executeQuery();
             if (rs.next()) return rs.getInt("prestige");
             else return -1;
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
             try {
@@ -134,7 +134,7 @@ public interface Sql {
             rs = ps.executeQuery();
             if (rs.next()) return rs.getInt("last_taken_money");
             else return -1;
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
             try {

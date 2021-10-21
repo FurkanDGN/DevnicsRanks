@@ -1,7 +1,6 @@
 package com.gmail.furkanaxx34.ranks.listeners;
 
 import com.gmail.furkanaxx34.ranks.Ranks;
-import com.gmail.furkanaxx34.ranks.RanksAPI;
 import com.gmail.furkanaxx34.ranks.events.BalanceChangeEvent;
 import com.gmail.furkanaxx34.ranks.file.RanksConfig;
 import org.bukkit.entity.Player;
@@ -32,7 +31,7 @@ public class LevelListener implements Listener {
                     vault.withdrawPlayer(player, (int) realLevelPrice);
                     after = vault.getBalance(player);
                     api.setLastTakenMoney(player, (int) realLevelPrice);
-                    if (i == ranks.size()-1) {
+                    if (i == ranks.size() - 1) {
                         int prestige = api.getPrestige(player.getUniqueId());
                         api.setPrestige(player, prestige + 1);
                         api.setLastTakenMoney(player, 0);
@@ -40,7 +39,8 @@ public class LevelListener implements Listener {
                         i = 0;
                     }
                 }
-            }catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {}
+            } catch (NumberFormatException | ArrayIndexOutOfBoundsException ignored) {
+            }
         }
     }
 }
