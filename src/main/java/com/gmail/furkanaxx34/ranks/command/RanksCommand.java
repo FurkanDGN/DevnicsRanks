@@ -12,11 +12,14 @@ public class RanksCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if (!(sender instanceof Player)) {
+            sender.sendMessage("That command can use only in game.");
             return false;
         }
 
-        Player player = (Player) sender;
-        RanksMenu.openMenu(player);
+        if (args.length == 0) {
+            Player player = (Player) sender;
+            RanksMenu.openMenu(player);
+        }
         return true;
     }
 }
