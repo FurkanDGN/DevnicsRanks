@@ -25,6 +25,7 @@ public class RanksAPI {
     private Sql sql;
     @Nullable
     private HashMap<UUID, Integer> prestige = null;
+    @Nullable
     private HashMap<UUID, Integer> lastTakenMoney = null;
 
     void load() {
